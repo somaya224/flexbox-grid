@@ -1,0 +1,94 @@
+/* Border box declaration */
+html {
+  box-sizing: border-box;
+}
+/* inherit border-box on all elements in the universe and before and after */
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+a {
+	color: #2772B0;
+}
+.wrapper {
+	width: 97%;
+	max-width: 1200px;
+	margin: 0 auto;
+	background-color: #fff;
+}
+div img {
+	width: 100%;
+	max-width: 225px;
+}
+  .col-1-2,
+	.col-1-4 {
+	background-color: #ffc;
+	}
+	.col-2 {
+		background-color: #fcf;
+	}
+	.col-3{
+		background-color: #cff;
+	}
+	.col-4{
+		background-color: #ccf;
+  }
+
+  /* grid system */
+
+  /* grid system -- mobile first! */
+  .row {
+    display: flex;
+    flex-flow: row wrap;
+  }
+[class*='col-'] {
+		flex: 0 0 92% ;
+		margin: 5px 4%;
+		/* min-height: 1px; for IE no content madness */
+  }
+  .tap-order-1 {
+    order: -1;
+  }
+
+  /* Mobile Landscape Screen Sizes  and tap*/
+@media only screen and (min-width: 480px)  {
+	.col-1-2,
+	.col-2 {
+	flex: 0 0 42%;
+  }
+  .tap-order-1 {
+    flex: 0 0 92%
+  }
+}
+
+/* Desktop screen Sizes */
+@media only screen and (min-width: 769px) {
+  .reverse {
+    flex-direction: row-reverse;
+  }
+	[class*='col-'] {
+    margin-right: 0;
+  }
+  .reverse .col-1-2 {
+    margin-left: 0;
+    margin-right: 4%;
+  }
+	.col-1-2,
+	.col-1-4 {
+	flex: 0 0 20%;
+	}
+	.col-2 {
+		flex: 0 0 44%;
+	}
+	.col-3 {
+		flex: 0 0 68%;
+  }
+  .tap-order-1 {
+    order: 0;
+  }
+}
